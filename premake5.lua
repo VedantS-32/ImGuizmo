@@ -2,19 +2,29 @@ project "ImGuizmo"
 	kind "StaticLib"
 	language "C++"
 	cppdialect "C++20"
-	staticruntime "Off"
+	staticruntime "off"
 	systemversion "latest"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
-	includedirs {
-		"%{IncludeDir.imgui}"
+	files {
+		"GraphEditor.h",
+		"GraphEditor.cpp",
+		"ImGuizmo.h",
+		"ImGuizmo.cpp",
+		"ImGradient.h",
+		"ImGradient.cpp",
+		"ImSequencer.h",
+		"ImSequencer.cpp",
+		"ImCurveEdit.h",
+		"ImCurveEdit.cpp",
+		"ImZoomSlider.h"
 	}
 
-	files {
-		"*.h",
-		"*.cpp"
+	includedirs {
+      "",
+		"../imgui"
 	}
 
 	links {
