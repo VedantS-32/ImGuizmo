@@ -8,23 +8,13 @@ project "ImGuizmo"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
-	files {
-		"GraphEditor.h",
-		"GraphEditor.cpp",
-		"ImGuizmo.h",
-		"ImGuizmo.cpp",
-		"ImGradient.h",
-		"ImGradient.cpp",
-		"ImSequencer.h",
-		"ImSequencer.cpp",
-		"ImCurveEdit.h",
-		"ImCurveEdit.cpp",
-		"ImZoomSlider.h"
+	includedirs {
+		"%{IncludeDir.imgui}"
 	}
 
-	includedirs {
-      "",
-		"../imgui"
+	files {
+		"*.h",
+		"*.cpp"
 	}
 
 	links {
